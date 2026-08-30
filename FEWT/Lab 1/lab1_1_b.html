@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: rgb(230, 0, 255);
+            position: relative;
+            animation: movebox 4s;
+        }
+
+        @keyframes movebox {
+
+            0%{
+                left:0;
+                top:0;
+            }
+
+            25%{
+                left: 300px;
+                top: 0;
+            }
+
+            50%{
+                left: 300px;
+                top: 300px;
+            }
+
+            75%{
+                left: 0;
+                top: 300px;
+            }
+
+            100%{
+                left: 0;
+                top: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- b. moving div from Left to right, right to bottom, bottom to left and left to top. -->
+    
+    <div class="box"></div>
+
+</body>
+</html>
