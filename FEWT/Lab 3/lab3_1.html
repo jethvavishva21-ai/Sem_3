@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- WAP in JavaScript to make simple calculator using popup box. -->
+
+    <script>
+
+        let num1 = parseFloat(prompt("Enter No 1 : "));
+        let num2 = parseFloat(prompt("Enter No 2 : "));
+        let a = prompt("Enter Operator (+, -, *, /) : ");
+
+        if (a === '+') {
+            document.write("Addition = " + (num1 + num2));
+        }
+        else if (a === '-') {
+            document.write("Subtract = " + (num1 - num2));
+        }
+        else if (a === '*') {
+            document.write("Multiplication = " + (num1 * num2));
+        }
+        else if (a === '/') {
+            document.write("Division = " + (num1 / num2));
+        }
+        else {
+            document.write("Invalid operator entered.");
+        }
+    </script>
+</body>
+
+</html>

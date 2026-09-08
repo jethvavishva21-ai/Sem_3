@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- WAP in JavaScript to check whether the given number is palindrome or not. -->
+
+    <script>
+        let n = parseInt(prompt("Enter Number : "));
+
+        let rev = 0,digit;
+
+        let temp = n;
+
+        while(n != 0)
+        {
+            digit = n % 10;
+            rev = rev * 10 + digit;
+            n = parseInt(n / 10);
+        }
+
+        document.write("Reverse Number : " + rev + "<br>");
+
+        if(temp == rev)
+        {
+            document.write(temp + " is Palindrome Number");
+        }
+        
+        else
+        {
+            document.write(temp + " is Not Palindrome Number");
+        }
+    </script>
+</body>
+</html>
