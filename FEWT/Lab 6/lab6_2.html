@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* CSS Design */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7f6;
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .card {
+            background-color: white;
+            width: 200px;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .card h3 {
+            margin-top: 0;
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+
+        .card span {
+            display: block;
+            background-color: #ecf0f1;
+            margin: 5px 0;
+            padding: 5px;
+            border-radius: 5px;
+            color: #333;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Demonstrate different array functions like push, pop, shift, unshift, splice, sort etc… (A) -->
+
+    <script>
+        // --- 1. Push ---
+        let a = [10, 20, 30, 40, 50];
+        a.push(60); // Adds 60 to the end
+
+        document.write('<div class="card"><h3>--- Push ---</h3>');
+        for (let i = 0; i < a.length; i++) {
+            document.write('<span>' + a[i] + '</span>');
+        }
+        document.write('</div>');
+
+        // --- 2. Pop ---
+        let b = [10, 20, 30, 40, 50];
+        b.pop(); // Removes 50 from the end
+
+        document.write('<div class="card"><h3>--- Pop ---</h3>');
+        for (let i = 0; i < b.length; i++) {
+            document.write('<span>' + b[i] + '</span>');
+        }
+        document.write('</div>');
+
+        // --- 3. Shift ---
+        let c = [10, 20, 30, 40, 50];
+        c.shift(); // Removes 10 from the start
+
+        document.write('<div class="card"><h3>--- Shift ---</h3>');
+        for (let i = 0; i < c.length; i++) {
+            document.write('<span>' + c[i] + '</span>');
+        }
+        document.write('</div>');
+
+        // --- 4. Unshift ---
+        let d = [10, 20, 30, 40, 50];
+        d.unshift(5); // Adds 5 to the start
+
+        document.write('<div class="card"><h3>--- Unshift ---</h3>');
+        for (let i = 0; i < d.length; i++) {
+            document.write('<span>' + d[i] + '</span>');
+        }
+        document.write('</div>');
+
+        // --- 5. Splice ---
+        let e = [10, 20, 30, 40, 50];
+        e.splice(2, 1, 99); // Removes 1 element at index 2 (which is 30) and adds 99
+
+        document.write('<div class="card"><h3>--- Splice ---</h3>');
+        for (let i = 0; i < e.length; i++) {
+            document.write('<span>' + e[i] + '</span>');
+        }
+        document.write('</div>');
+
+        // --- 6. Slice ---
+        let f = [10, 20, 30, 40, 50];
+        let slicedArr = f.slice(1, 4); // Takes elements from index 1 to 3 (20, 30, 40)
+
+        document.write('<div class="card"><h3>--- Slice ---</h3>');
+        for (let i = 0; i < slicedArr.length; i++) {
+            document.write('<span>' + slicedArr[i] + '</span>');
+        }
+        document.write('</div>');
+
+        // --- 7. Sort ---
+        let g = [50, 10, 40, 20, 30];
+        g.sort(); // Sorts the array in ascending order
+
+        document.write('<div class="card"><h3>--- Sort ---</h3>');
+        for (let i = 0; i < g.length; i++) {
+            document.write('<span>' + g[i] + '</span>');
+        }
+        document.write('</div>');
+
+        // --- 8. Reverse ---
+        let h = [10, 20, 30, 40, 50];
+        h.reverse(); // Reverses the array
+
+        document.write('<div class="card"><h3>--- Reverse ---</h3>');
+        for (let i = 0; i < h.length; i++) {
+            document.write('<span>' + h[i] + '</span>');
+        }
+        document.write('</div>');
+
+        // --- 9. Concat (બે એરે ને જોડવા માટે) ---
+            let arr1 = [10, 20];
+            let arr2 = [30, 40];
+            let combined = arr1.concat(arr2);
+
+            document.write('<div class="card"><h3>--- Concat ---</h3>');
+            for (let i = 0; i < combined.length; i++) {
+                document.write('<span>' + combined[i] + '</span>');
+            }
+            document.write('</div>');
+
+            // --- 10. Join (એરે ના બધા ડેટા ને ભેગા કરી એક String બનાવવા) ---
+            let words = ["Html", "Css", "Js"];
+            let sentence = words.join(" + "); // વચ્ચે + મુકાશે
+
+            document.write('<div class="card"><h3>--- Join ---</h3>');
+            document.write('<span>' + sentence + '</span>');
+            document.write('</div>');
+
+            // --- 11. Includes (એરે માં કોઈ ચોક્કસ ડેટા છે કે નહિ તે ચેક કરવા) ---
+            let checkArr = [10, 20, 30, 40];
+            let isPresent = checkArr.includes(30); // 30 છે એટલે true આવશે
+
+            document.write('<div class="card"><h3>--- Includes ---</h3>');
+            document.write('<span>Result: ' + isPresent + '</span>');
+            document.write('</div>');
+
+            // --- 12. IndexOf (કોઈ ડેટા કયા નંબર પર (Index) છે તે જાણવા) ---
+            let findArr = [10, 20, 30, 40];
+            let position = findArr.indexOf(40); // 40 ચોથા સ્થાને (Index 3) છે
+
+            document.write('<div class="card"><h3>--- IndexOf ---</h3>');
+            document.write('<span>Index Position: ' + position + '</span>');
+            document.write('</div>');
+
+            // --- 13. Fill (આખા એરે માં એક જ સરખી વેલ્યુ ભરી દેવા માટે) ---
+            let fillArr = [1, 2, 3, 4];
+            fillArr.fill(99); // બધા નંબર ની જગ્યાએ 99 આવી જશે
+
+            document.write('<div class="card"><h3>--- Fill ---</h3>');
+            for (let i = 0; i < fillArr.length; i++) {
+                document.write('<span>' + fillArr[i] + '</span>');
+            }
+            document.write('</div>');
+
+            // --- 14. toString (એરે ને સાદા વાક્ય/String માં ફેરવવા) ---
+            let strArr = [10, 20, 30];
+            let simpleString = strArr.toString();
+
+            document.write('<div class="card"><h3>--- toString ---</h3>');
+            document.write('<span>' + simpleString + '</span>');
+            document.write('</div>');
+    </script>
+</body>
+
+</html>
