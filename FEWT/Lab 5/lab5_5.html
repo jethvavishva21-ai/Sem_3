@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Write a JavaScript that uses a loop that searches a word in sentence held in an array, returning the
+    index of the word. -->
+
+    <script>
+        a = ['flower','glow','magic']
+
+        word = prompt("Enterkrish a Word to search");
+
+        let index = -1;
+
+        for(i = 0; i < a.length; i++)
+        {
+            if(a[i] === word)
+            {
+                index = i;
+                break;
+            }
+        }
+
+        if (index !== -1) 
+        {
+            document.write("Word Index : " + index);
+        }
+        
+        else 
+        {
+            document.write("Word not found in the array.");
+        }
+
+    </script>
+</body>
+</html>
