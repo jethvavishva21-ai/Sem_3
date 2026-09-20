@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #e0e5ec;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+    }
+
+    .click {
+        background-color: #2c3e50;
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+        width: 280px;
+    }
+
+    .click div {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 12px;
+    }
+
+    .click div:last-child {
+        margin-bottom: 0;
+    }
+
+    #displayscreen {
+        width: 100% !important;
+        height: 60px !important;
+        background-color: #ecf0f1;
+        border: none !important;
+        border-radius: 8px !important;
+        font-size: 28px;
+        text-align: right;
+        padding: 10px 15px;
+        box-sizing: border-box;
+        margin-bottom: 10px;
+        color: #2c3e50;
+        font-weight: bold;
+        box-shadow: inset 0 3px 5px rgba(0,0,0,0.1);
+    }
+
+    .click button {
+        width: 60px;
+        height: 60px;
+        font-size: 22px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: all 0.2s ease;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    }
+
+    .click button:active {
+        transform: scale(0.92);
+        box-shadow: 0 2px 3px rgba(0,0,0,0.2);
+    }
+
+    #num {
+        background-color: #ecf0f1;
+        color: #2c3e50;
+    }
+
+    #num:hover { 
+        background-color: #bdc3c7; 
+    }
+
+    #oper {
+        background-color: #f39c12;
+        color: white;
+    }
+
+    #oper:hover { 
+        background-color: #e67e22; 
+    }
+
+    #clear {
+        background-color: #e74c3c;
+        color: white;
+    }
+
+    #clear:hover { 
+        background-color: #c0392b; 
+    }
+
+    #eql-btn {
+        background-color: #2ecc71;
+        color: white;
+    }
+
+    #eql-btn:hover { 
+        background-color: #27ae60;
+    }
+
+    #displayscreen:focus {
+        outline: none;
+    }
+
+    </style>
+</head>
+<body>
+    <!-- WAP to create a basic graphical Calculator using HTML and JavaScript. -->
+
+    <div class="click">
+        <div>
+            <input type="text" id="displayscreen" 
+            style="width: 100%; height: 29px; border-radius: 2px; border-color: black;"/>
+        </div>
+        <div>
+            <button id="clear" onclick="clearScreen()">C</button>
+            <button id="oper" onclick="press('/')">/</button>
+            <button id="oper" onclick="press('*')">*</button>
+            <button id="oper" onclick="press('-')">-</button>
+        </div>
+
+        <div>
+            <button id="num" onclick="press('7')">7</button>
+            <button id="num" onclick="press('8')">8</button>
+            <button id="num" onclick="press('9')">9</button>
+            <button id="oper" onclick="press('+')">+</button>
+        </div>
+
+        <div>
+            <button id="num" onclick="press('4')">4</button>
+            <button id="num" onclick="press('5')">5</button>
+            <button id="num" onclick="press('6')">6</button>
+            <button id="eql-btn" onclick="eql()">=</button>
+        </div>
+
+        <div>
+            <button id="num" onclick="press('1')">1</button>
+            <button id="num" onclick="press('2')">2</button>
+            <button id="num" onclick="press('3')">3</button>
+            <button id="num" onclick="press('0')">0</button>
+        </div>
+    </div>
+
+    <script>
+        displayscreen = document.getElementById("displayscreen");
+
+        function press(value)
+        {
+            displayscreen.value += value;
+        }
+
+        function clearScreen() 
+        {
+            displayscreen.value = " ";
+        }
+
+        function eql()
+        {
+            try
+            {
+                displayscreen.value = eval(displayscreen.value);
+            }
+
+            catch (error)
+            {
+                displayscreen.value = error;
+            }
+        }
+    </script>
+</body>
+</html>
